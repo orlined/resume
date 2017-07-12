@@ -1,3 +1,4 @@
+import { SectionComponent } from './section.component';
 import { BulletComponent } from './bullet/bullet.component';
 import { Component } from '@angular/core';
 
@@ -11,13 +12,18 @@ export class AppComponent {
   title: string="";
   place: string="";
   bul: BulletComponent[]=[];
+  sec: SectionComponent[]=[];
 
-  setTitle(t,p, b, s){
+  onSubmit(t,p, b, s){
 
     this.bul.push(
       new BulletComponent(t, p, b, s)
     )
-      console.log(this.bul);
+
+    this.sec.push(
+      new SectionComponent("Education", this.bul)
+    )
+      console.log(this.sec);
     this.title=t;
     this.place=p;
 

@@ -2,7 +2,7 @@
 
 <div class="container">
 
-    <form class="form-group">
+    <form class="form-group" (ngSubmit)="onSubmit(_tit, _pla, _bul)">
         <div class="form-group">
           <label for="title"> Enter position: </label>
           <input type="text" id="title" [(ngModel)]='_tit' name="title" >
@@ -16,8 +16,8 @@
           <textarea class="form-control" id="bullet" [(ngModel)]='_bul' name="bullet" rows="3"></textarea>
         </div>
         <div>
-          <button class="btn primary-btn" (click)='setTitle(_tit, _pla, _bul)'> Submit</button>
-          <button class="btn danger" (click)='clearTitle(_bul)'> Clear</button>
+          <button class="btn primary-btn" > Submit</button>
+          <button class="btn danger" (click)='onSubmit()'> Clear</button>
         </div>
         <div>
             <label class="radio-inline"><input type="radio" name="optradio" checked="true"> Education</label>

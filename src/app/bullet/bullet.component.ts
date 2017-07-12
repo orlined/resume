@@ -4,9 +4,7 @@ import {FormsModule} from '@angular/forms'
 
 @Component({
   selector: 'app-bullet',
-  template: `
-  
-  `,
+  template: ``,
   styleUrls: ['./bullet.component.css']
 })
 
