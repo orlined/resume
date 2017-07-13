@@ -10,7 +10,7 @@ import {FormsModule} from '@angular/forms'
 
 export class BulletComponent   {
 
-  constructor(public title: string, public place: string, public bullet: string, public section: string) { 
+  constructor(public title: string, public place: string, public bullet: string) { 
    
   }
 

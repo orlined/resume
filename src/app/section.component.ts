@@ -7,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./section.component.css']
 })
 
-export class SectionComponent {
+export class SectionComponent  {
 
 constructor (public name:string, public bullets: BulletComponent[] ) {}
 

@@ -11,24 +11,29 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title: string="";
   place: string="";
+  sectName: string;
   bul: BulletComponent[]=[];
   sec: SectionComponent[]=[];
 
   onSubmit(t,p, b, s){
 
-    this.bul.push(
-      new BulletComponent(t, p, b, s)
-    )
-
-    this.sec.push(
-      new SectionComponent("Education", this.bul)
-    )
-      console.log(this.sec);
     this.title=t;
     this.place=p;
+    this.sectName=s;
+    this.bul.push(
+      new BulletComponent(t, p, b)
+    )
 
+     this.sec.push(
+       new SectionComponent(this.sectName, this.bul)
+     )
+     
+   console.log(this.sec);
   }
+
+
   clearTitle(){
+    this.sec=[];
     this.bul=[];
     this.title="";
     this.place="";

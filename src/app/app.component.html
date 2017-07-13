@@ -2,30 +2,32 @@
 
 <div class="container">
 
-    <form class="form-group" (ngSubmit)="onSubmit(_tit, _pla, _bul)">
-        <div class="form-group">
+<fieldset>
+    <form class="form-group" (ngSubmit)="onSubmit(_tit, _pla, _bul, _sect)">
+        <legend> Enter Bullet</legend>
+        <div class="form-field">
           <label for="title"> Enter position: </label>
-          <input type="text" id="title" [(ngModel)]='_tit' name="title" >
+          <input type="text" id="title" [ngModel]='_tit' name="title" >
         </div>
-        <div class="form-group">
+        <div class="form-field">
           <label for="place"> Enter place: </label>
-          <input type="text" id="place" [(ngModel)]='_pla' name="place" >
+          <input type="text" id="place" [ngModel]='_pla' name="place" >
         </div>
-        <div class="form-group">
+        <div class="form-field">
           <label for="bullet"> Enter bullet:</label>
           <textarea class="form-control" id="bullet" [(ngModel)]='_bul' name="bullet" rows="3"></textarea>
         </div>
-        <div>
+        <div class="form-field">
           <button class="btn primary-btn" > Submit</button>
-          <button class="btn danger" (click)='onSubmit()'> Clear</button>
+          <!--<button class="btn danger" (click)='onSubmit()'> Clear</button>-->
         </div>
-        <div>
-            <label class="radio-inline"><input type="radio" name="optradio" checked="true"> Education</label>
-            <label class="radio-inline"><input type="radio" name="optradio"> Work</label>
-            <label class="radio-inline"><input type="radio" name="optradio"> Additional</label>
+        <div class="form-field">
+            <label class="radio-inline"><input type="radio" name="optradio" checked="true" [value]="Education"  [(ngModel)]="_sect"> Education</label>
+            <label class="radio-inline"><input type="radio" name="optradio" [value]="Work"  [(ngModel)]="_sect"> Work</label>
+            <label class="radio-inline"><input type="radio" name="optradio" checked="false" > Additional</label>
         </div>
     </form>
-
+</fieldset>
 </div>
 
 <div class="container">
@@ -38,10 +40,13 @@
         </div>
 
     </div>
-    <ul>
-      <li *ngFor='let b of bul'>
-        {{b.bullet}} 
-        </li>
-    </ul>
+
+      <ul *ngFor='let b of sec'>
+        
+          <li *ngFor='let k of b.bullets'>
+             {{k.bullet}} 
+          </li>
+      </ul>
+    
 </div>
 
