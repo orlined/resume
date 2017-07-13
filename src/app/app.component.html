@@ -3,7 +3,7 @@
 <div class="container">
 
 <fieldset>
-    <form class="form-group" (ngSubmit)="onSubmit(_tit, _pla, _bul, _sect)">
+    <form class="form-group" (ngSubmit)="onSubmit(f)" #f="ngForm">
         <legend> Enter Bullet</legend>
         <div class="form-field">
           <label for="title"> Enter position: </label>
@@ -21,11 +21,21 @@
           <button class="btn primary-btn" > Submit</button>
           <!--<button class="btn danger" (click)='onSubmit()'> Clear</button>-->
         </div>
-        <div class="form-field">
-            <label class="radio-inline"><input type="radio" name="optradio" checked="true" [value]="Education"  [(ngModel)]="_sect"> Education</label>
-            <label class="radio-inline"><input type="radio" name="optradio" [value]="Work"  [(ngModel)]="_sect"> Work</label>
-            <label class="radio-inline"><input type="radio" name="optradio" checked="false" > Additional</label>
+        <div class="radio" *ngFor="let section of sections">
+            <label>
+                <input type="radio" 
+                name="optradio" 
+                [value]="section"
+                ngModel>
+                {{section}}
+                 
+            </label>
+
         </div>
+            <!--<label class="radio-inline"><input type="radio" name="optradio" checked="true" [value]="optradio"  ngModel="Education"> Education</label>
+            <label class="radio-inline"><input type="radio" name="optradio" [value]="optradio"  ngModel="Work" > Work</label>
+            <label class="radio-inline"><input type="radio" name="optradio" [value]="optradio" ngModel="Additional"> Additional</label>
+        </div>-->
     </form>
 </fieldset>
 </div>
