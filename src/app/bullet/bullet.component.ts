@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import {FormsModule} from '@angular/forms'
 
 
@@ -10,7 +10,7 @@ import {FormsModule} from '@angular/forms'
 
 export class BulletComponent   {
 
-  constructor(public title: string, public place: string, public bullet: string) { 
+  constructor(public title: string, public place: string, public bullet: string, public section: string) { 
    
   }
 

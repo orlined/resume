@@ -8,13 +8,14 @@ import { BulletComponent } from './bullet/bullet.component'
 @NgModule({
   declarations: [
     AppComponent,
-    BulletComponent,
-    SectionComponent
+    SectionComponent,
+    BulletComponent
+    
   ],
   imports: [
     BrowserModule, FormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent ]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
