@@ -4,13 +4,15 @@ import {FormsModule} from '@angular/forms'
 
 @Component({
   selector: 'app-bullet',
-  template: ``,
+  templateUrl: './bullet.component.html' ,
   styleUrls: ['./bullet.component.css']
 })
 
 export class BulletComponent   {
 
-  constructor(public title: string, public place: string, public bullet: string, public section: string) { 
+@Input() transBul: {id: number, title: string, place: string, bullet: string, section: string } ;
+
+  constructor() { 
    
   }
 

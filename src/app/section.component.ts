@@ -1,4 +1,5 @@
 import { BulletComponent } from './bullet/bullet.component';
+import { Bullet } from './bullet/bullet.model';
 import { Component, Output, Input } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import {FormsModule} from '@angular/forms'
@@ -11,27 +12,26 @@ import {FormsModule} from '@angular/forms'
 
 export class SectionComponent  {
 
+ind: number=0;
 sectName: string;
-bullets: BulletComponent[]; 
+bullets: Bullet[]; 
 sections=["Eduaction","Work","Additional"]
 
 constructor () {
 }
 
-bul: BulletComponent[]=[];
+bul: Bullet[]=[];
 
 
   onSubmit(form: NgForm){
 
     //this.sectName=form.value.optradio;
-
+    this.ind+=1;
     this.bul.push(
-      new BulletComponent(form.value.title, form.value.place, form.value.bullet, form.value.optradio)
+      new Bullet(this.ind, form.value.title, form.value.place, form.value.bullet, form.value.optradio)
     )
 
-    //  this.sec.push(
-    //    new SectionComponent(this.sectName, this.bul)
-    //  )
+   
      
    console.log(form);
   console.log(this.bul)

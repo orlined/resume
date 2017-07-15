@@ -16,7 +16,7 @@
           <textarea class="form-control" id="bullet" name="bullet" ngModel rows="3"></textarea>
         </div>
         <div class="form-field">
-          <button class="btn primary-btn" > Submit</button>
+          <button class="btn btn-success" > Submit</button>
           <!--<button class="btn danger" (click)='onSubmit()'> Clear</button>-->
         </div>
         <div class="radio" *ngFor="let section of sections">
@@ -39,7 +39,7 @@
 
 <div class="container" >
 
-    <div class="row">
+    <!--<div class="row">
          
         <div class="col-sm-2">
             <h4>{{title}} {{title}}</h4>
@@ -48,14 +48,11 @@
             <h4 text="right" >{{place}}</h4>
         </div>
 
-    </div>
+    </div>-->
 
+<app-bullet *ngFor="let t of bul" [transBul]="t"></app-bullet>
         
-          <ul *ngFor='let k of bul'>
-            <li> {{k.title}}
-             {{k.bullet}} 
-             {{k.place}} </li>
-          </ul>
+    
     
 </div>
 
