@@ -1,64 +1,27 @@
 
-<div class="container">
-<fieldset>
-    <form class="form-group" (ngSubmit)="onSubmit(f)" #f="ngForm">
-        <legend> Enter Bullet</legend>
-        <div class="form-field">
-          <label for="title"> Enter position: </label>
-          <input type="text" id="title" ngModel name="title" >
-        </div>
-        <div class="form-field">
-          <label for="place"> Enter place: </label>
-          <input type="text" id="place"  ngModel name="place" >
-        </div>
-        <div class="form-field">
-          <label for="bullet"> Enter bullet:</label>
-          <textarea class="form-control" id="bullet" name="bullet" ngModel rows="3"></textarea>
-        </div>
-        <div class="form-field">
-          <button class="btn btn-success" > Submit</button>
-          <!--<button class="btn danger" (click)='onSubmit()'> Clear</button>-->
-        </div>
-        <div class="radio" *ngFor="let section of sections">
-            <label>
-                <input type="radio" 
-                name="optradio" 
-                [value]="section"
-                ngModel>
-                {{section}}
-                 
-            </label>
+    
+    <h4> Education</h4>
+    <div class="contianer">
 
+            <button class="btn btn-prm" (click)="flipper(showForm)">Enter new Position </button>
+
+    </div>
+
+    
+<bullet-form [seeForm]="showForm" (newBul)=addBullet($event) (closeForm)="flipper(!$event)"></bullet-form>
+
+
+<div class="container" [hidden]="!showForm">
+
+
+    <div class="row ">
+        <div class="col-xs-6 pull-left">
+            <ng-container >
+                <app-bullet *ngFor="let t of bulList" [transBul]="t" class="list-group-item clearfix"></app-bullet>
+            </ng-container>
         </div>
-         
-    </form>
-</fieldset>
+    </div>       
+
+
 </div>
 
-
-
-<div class="container" >
-
-    <!--<div class="row">
-         
-        <div class="col-sm-2">
-            <h4>{{title}} {{title}}</h4>
-        </div>
-        <div class="col-sm-10" class="text-right">
-            <h4 text="right" >{{place}}</h4>
-        </div>
-
-    </div>-->
-
-<app-bullet *ngFor="let t of bul" [transBul]="t"></app-bullet>
-        
-    
-    
-</div>
-
-<ng-container *ngFor="let b of bul">
-
-    <h4 *ngIf="b.title==='PM'">
-        {{b.title}}
-    </h4>
-</ng-container>

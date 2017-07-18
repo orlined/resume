@@ -1,0 +1,48 @@
+<div class="container" [hidden]="seeForm" >
+
+    <div class="row">
+        <div class="col-xs-6 " style="border: solid grey 1px; border-radius:5px">
+            <form class="form-group " (ngSubmit)="onSubmit(f)" #f="ngForm">
+                <legend> Enter Bullet</legend>
+                    <div class="row marginBottom">
+                        <div class="col-xs-3">   
+                            <label for="title"> Title:</label>
+                        </div>
+                        <div class="col-xs-3">
+                            <input type="text" id="title" ngModel name="title" >
+                        </div>
+                    </div>
+                    <div class="row marginBottom">
+                        <div class="col-xs-3"> 
+                            <label for="place"> Enter place: </label>
+                        </div>
+                        <div class="col-xs-3"> 
+                            <input type="text" id="place"  ngModel name="place" >
+                        </div>
+                    </div>
+                    <div class="form-field">
+                        <label for="bullet"> Enter bullet:</label>
+                        <textarea class="form-control" id="bullet" name="bullet" ngModel rows="3"></textarea>
+                    </div>
+                    <div class="row">
+                        
+                          
+                                <button class="btn btn-success marginTop pull-right col-xs-2" style="margin-right:15px" > Submit</button> 
+                          
+
+                            <div class="radio" class="radio-inline marginTop pull-left" *ngFor="let section of sections" style="margin-left:15px; margin-top:15px">
+                                <label>
+                                    <input type="radio" 
+                                    name="optradio" 
+                                    [value]="section"
+                                    ngModel>
+                                    {{section}}
+                                </label>
+                             </div>
+                        
+                    </div>       
+            </form>
+        </div>
+    </div>
+
+</div>
