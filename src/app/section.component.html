@@ -1,27 +1,64 @@
 
+ 
     
-    <h4> Education</h4>
-    <div class="contianer">
 
-            <button class="btn btn-prm" (click)="flipper(showForm)">Enter new Position </button>
+<div class="container">  
 
+    <div class="row">  
+        <div class="col-md-2">
+            <h4 class="col-md-1"> Education</h4>
+            <button class="btn col-md-1.5 pull-right" (click)="flipper(showForm)"> + </button>
+        </div>
     </div>
 
-    
-<bullet-form [seeForm]="showForm" (newBul)=addBullet($event) (closeForm)="flipper(!$event)"></bullet-form>
+    <div class="container" [hidden]="!showForm">
 
+                 <div *ngFor="let t of bulList">     
+                    <app-bullet [transBul]="t" *ngIf="t.section=='Education'"></app-bullet>     
+                 </div>
+    </div>
 
-<div class="container" [hidden]="!showForm">
+    <div class="row">  
 
-
-    <div class="row ">
-        <div class="col-xs-6 pull-left">
-            <ng-container >
-                <app-bullet *ngFor="let t of bulList" [transBul]="t" class="list-group-item clearfix"></app-bullet>
-            </ng-container>
+        <div class="col-md-6">
+            <h4 class="col-md-4"> Work Experience</h4>
+            <button class="btn btn-prm col-md-1.5 pull-left" (click)="flipper(showForm)"> + </button>
         </div>
-    </div>       
+    </div>
 
+    <div class="container" [hidden]="!showForm">
+
+                 <div *ngFor="let t of bulList">     
+                    <app-bullet [transBul]="t" *ngIf="t.section=='Work'"></app-bullet>     
+                 </div>
+    </div>
+
+    <div class="row">  
+
+        <div class="col-md-2">
+            <h4 class="col-md-1"> Additional</h4>
+            <button class="btn btn-prm col-md-1.5 pull-right" (click)="flipper(showForm)"> + </button>
+        </div>
+    </div>
+
+    <div class="container" [hidden]="!showForm">
+
+                 <div *ngFor="let t of bulList">     
+                    <app-bullet [transBul]="t" *ngIf="t.section=='Additional'"></app-bullet>     
+                 </div>
+    </div>
 
 </div>
+   
+<bullet-form [seeForm]="showForm" (newBul)=addBullet($event) (closeForm)="flipper(!$event)"></bullet-form>
+
+<!--
+<div class="container" [hidden]="!showForm">
+
+    <div class="row ">
+        <div class="col-md-6 pull-left">         
+                <app-bullet *ngFor="let t of bulList" [transBul]="t" class="list-group-item clearfix"></app-bullet>         
+        </div>
+    </div>       
+</div>-->
 

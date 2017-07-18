@@ -12,8 +12,7 @@ import {FormsModule} from '@angular/forms'
 
 export class SectionComponent  {
 
-// ind: number=0;
-// sections=["Eduaction","Work","Additional"]
+
  bulList: Bullet[]=[];
 showForm: boolean=true;
 
@@ -31,14 +30,5 @@ constructor () {
     this.showForm=!sh;
   }
 
-  // onSubmit(form: NgForm){
-  //     this.ind+=1;
-  //     this.bul.push(
-  //     new Bullet(this.ind, form.value.title, form.value.place, form.value.bullet, form.value.optradio)
-  //        )
-  //   this.showForm=true;
-        
-  //   console.log(form);
-  //   console.log(this.bul);
-  // }
+
 }

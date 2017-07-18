@@ -13,7 +13,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class BulletFormComponent implements OnInit {
 
 ind: number=0;
-sections=["Eduaction","Work","Additional"]
+sections=["Education","Work","Additional"]
 bul: Bullet[]=[];
 
 @Input() seeForm: boolean;
