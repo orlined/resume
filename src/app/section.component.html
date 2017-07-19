@@ -14,7 +14,11 @@
     <div class="container" [hidden]="!showForm">
 
                  <div *ngFor="let t of bulList; let i=index">     
-                    <app-bullet [transBul]="t" *ngIf="t.section=='Education'" (delBul)="deleteBul($event)"></app-bullet>     
+                    <app-bullet 
+                    [transBul]="t" 
+                    [id]="i"
+                    *ngIf="t.section=='Education'" 
+                    (delBul)="deleteBul($event)"></app-bullet>     
                  </div>
     </div>
 
@@ -28,8 +32,12 @@
 
     <div class="container" [hidden]="!showForm">
 
-                 <div *ngFor="let t of bulList">     
-                    <app-bullet [transBul]="t" *ngIf="t.section=='Work'" (delBul)="deleteBul($event)"></app-bullet>     
+                 <div *ngFor="let t of bulList; let i=index">    
+                    <app-bullet 
+                    [transBul]="t" 
+                    [id]="i" 
+                    *ngIf="t.section=='Work'" 
+                    (delBul)="deleteBul($event)"></app-bullet>     
                  </div>
     </div>
 
@@ -43,8 +51,12 @@
 
     <div class="container" [hidden]="!showForm">
 
-                 <div *ngFor="let t of bulList; ">     
-                    <app-bullet [transBul]="t" *ngIf="t.section=='Additional'" (delBul)="deleteBul($event)"></app-bullet>     
+                 <div *ngFor="let t of bulList; let i=index">     
+                    <app-bullet 
+                    [transBul]="t" 
+                    [id]="i"
+                    *ngIf="t.section=='Additional'" 
+                    (delBul)="deleteBul($event)"></app-bullet>     
                  </div>
     </div>
 

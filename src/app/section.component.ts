@@ -37,10 +37,10 @@ constructor () {
 
   deleteBul(id: number) {
     var x;
-    this.bulList.splice(id-1,1);
-    for(x=0; x<this.bulList.length;x++){
-      this.bulList[x].id=x;
-    }
+    this.bulList.splice(id,1);
+    // for(x=0; x<this.bulList.length;x++){
+    //   this.bulList[x].id=x+1;
+    // }
     console.log(this.bulList)
     console.log(id+"deleteBul");
   }

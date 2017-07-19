@@ -11,6 +11,7 @@ import {FormsModule} from '@angular/forms'
 export class BulletComponent   {
 
 @Input() transBul: {id: number, title: string, place: string, bullet: string, section: string } ;
+@Input() id: number;
 
 @Output() delBul = new EventEmitter<number>();
 
@@ -20,11 +21,10 @@ export class BulletComponent   {
   }
 
 deleteBullet(bulId){
-
-
   this.delBul.emit(bulId);
-  //console.log(bulId);
 }
+
+
 
 }
   

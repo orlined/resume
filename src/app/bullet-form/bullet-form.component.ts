@@ -12,7 +12,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class BulletFormComponent implements OnInit {
 
-ind: number=0;
+ind: number=1;
 sections=["Education","Work","Additional"]
 bul: Bullet[]=[];
 
@@ -28,8 +28,8 @@ bul: Bullet[]=[];
   }
   onSubmit(form: NgForm){
 
-    this.ind = (this.bul.length>0 ? (this.bul.length-1):1)
-      //this.ind=this.bul[-1].id;
+    this.ind = (this.bul.length<1 ? 1:(this.bul.length)+1)
+     
       this.bul.push(
           new Bullet(this.ind, form.value.title, form.value.place, form.value.bullet, this.whichSection)
          )
@@ -37,9 +37,7 @@ bul: Bullet[]=[];
     this.newBul.emit(this.bul);
     this.closeForm.emit(this.seeForm);
 
-   // console.log(form);
-   // console.log(this.bul);
-   // console.log(this.whichSection);
+ 
   }
 
 }
