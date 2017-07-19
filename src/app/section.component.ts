@@ -12,8 +12,8 @@ import {FormsModule} from '@angular/forms'
 
 export class SectionComponent  {
 
-
- bulList: Bullet[]=[];
+sect: string;
+bulList: Bullet[]=[];
 showForm: boolean=true;
 
 constructor () {
@@ -21,14 +21,28 @@ constructor () {
 }
 
   addBullet(updatedBul, t ){
-
     this.bulList=updatedBul;
-
+    console.log(this.bulList);
   }
 
   flipper(sh:boolean){
     this.showForm=!sh;
   }
 
+  assignSection(s: string){
+
+    this.sect=s;
+    
+  }
+
+  deleteBul(id: number) {
+    var x;
+    this.bulList.splice(id-1,1);
+    for(x=0; x<this.bulList.length;x++){
+      this.bulList[x].id=x;
+    }
+    console.log(this.bulList)
+    console.log(id+"deleteBul");
+  }
 
 }

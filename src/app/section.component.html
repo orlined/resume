@@ -1,20 +1,20 @@
 
  
     
-
+<hr>
 <div class="container">  
 
     <div class="row">  
         <div class="col-md-2">
             <h4 class="col-md-1"> Education</h4>
-            <button class="btn col-md-1.5 pull-right" (click)="flipper(showForm)"> + </button>
+            <button class="btn col-md-1.5 pull-right" (click)="flipper(showForm)" (click)="assignSection('Education')"> + </button>
         </div>
     </div>
 
     <div class="container" [hidden]="!showForm">
 
-                 <div *ngFor="let t of bulList">     
-                    <app-bullet [transBul]="t" *ngIf="t.section=='Education'"></app-bullet>     
+                 <div *ngFor="let t of bulList; let i=index">     
+                    <app-bullet [transBul]="t" *ngIf="t.section=='Education'" (delBul)="deleteBul($event)"></app-bullet>     
                  </div>
     </div>
 
@@ -22,14 +22,14 @@
 
         <div class="col-md-6">
             <h4 class="col-md-4"> Work Experience</h4>
-            <button class="btn btn-prm col-md-1.5 pull-left" (click)="flipper(showForm)"> + </button>
+            <button class="btn btn-prm col-md-1.5 pull-left" (click)="flipper(showForm)" (click)="assignSection('Work')"> + </button>
         </div>
     </div>
 
     <div class="container" [hidden]="!showForm">
 
                  <div *ngFor="let t of bulList">     
-                    <app-bullet [transBul]="t" *ngIf="t.section=='Work'"></app-bullet>     
+                    <app-bullet [transBul]="t" *ngIf="t.section=='Work'" (delBul)="deleteBul($event)"></app-bullet>     
                  </div>
     </div>
 
@@ -37,20 +37,22 @@
 
         <div class="col-md-2">
             <h4 class="col-md-1"> Additional</h4>
-            <button class="btn btn-prm col-md-1.5 pull-right" (click)="flipper(showForm)"> + </button>
+            <button class="btn btn-prm col-md-1.5 pull-right" (click)="flipper(showForm)" (click)="assignSection('Additional')" (delBul)="deleteBul($event)"> + </button>
         </div>
     </div>
 
     <div class="container" [hidden]="!showForm">
 
-                 <div *ngFor="let t of bulList">     
-                    <app-bullet [transBul]="t" *ngIf="t.section=='Additional'"></app-bullet>     
+                 <div *ngFor="let t of bulList; ">     
+                    <app-bullet [transBul]="t" *ngIf="t.section=='Additional'" (delBul)="deleteBul($event)"></app-bullet>     
                  </div>
     </div>
 
 </div>
    
-<bullet-form [seeForm]="showForm" (newBul)=addBullet($event) (closeForm)="flipper(!$event)"></bullet-form>
+
+
+<bullet-form [seeForm]="showForm" [whichSection]="sect" (newBul)=addBullet($event) (closeForm)="flipper(!$event)"></bullet-form>
 
 <!--
 <div class="container" [hidden]="!showForm">

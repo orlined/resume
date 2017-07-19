@@ -1,17 +1,18 @@
 
 <div class="container">
  <div class="row ">
-        <div class="col-md-6 pull-left"> 
-            <div class="margin">
+        <div class="col-md-8"> 
+            <div class="margin" style="border: solid grey 1px; border-radius:5px; padding:15px">
                   
                   <div class="row">
                         <div class="col-md-1"> <h4>{{transBul.id}}</h4></div>
-                        <div class="col-md-4"> <h4> {{transBul.title}} </h4> </div>
-                        <div class="col-md-1 pull-right"> <h4> {{transBul.place}} </h4> </div>
+                        <div class="col-md-6"> <h4> {{transBul.title}} </h4> </div>
+                        <div class="col-md-0.5 pull-right padding: 15px"> <h4> {{transBul.place}} </h4> </div>
                   </div>
                 
-                  <div class="margin"> {{transBul.bullet}} </div>
-                  
+                  <div class="padding: 15px"> {{transBul.bullet}} </div>
+                  <button class="btn btn-success"> Edit </button>
+                  <button class="btn btn-danger" (click)="deleteBullet(transBul.id)" > Delete </button>
 
             </div>
         </div>
