@@ -60,19 +60,11 @@
                  </div>
     </div>
 
+
+    <div class="row">   
+
+            <bullet-form class="col-md-6 pull-right" [seeForm]="showForm" [whichSection]="sect" (newBul)=addBullet($event) (closeForm)="flipper(!$event)"></bullet-form>
+
+    </div>
 </div>
-   
-
-
-<bullet-form [seeForm]="showForm" [whichSection]="sect" (newBul)=addBullet($event) (closeForm)="flipper(!$event)"></bullet-form>
-
-<!--
-<div class="container" [hidden]="!showForm">
-
-    <div class="row ">
-        <div class="col-md-6 pull-left">         
-                <app-bullet *ngFor="let t of bulList" [transBul]="t" class="list-group-item clearfix"></app-bullet>         
-        </div>
-    </div>       
-</div>-->
 
