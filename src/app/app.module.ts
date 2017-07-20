@@ -1,3 +1,4 @@
+import { BulletDataService } from './bullet-data.service';
 import { SectionComponent } from './section.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -5,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { BulletComponent } from './bullet/bullet.component';
 import { BulletFormComponent } from './bullet-form/bullet-form.component'
+
 
 @NgModule({
   declarations: [
@@ -17,7 +19,7 @@ import { BulletFormComponent } from './bullet-form/bullet-form.component'
   imports: [
     BrowserModule, FormsModule
   ],
-  providers: [],
+  providers: [BulletDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

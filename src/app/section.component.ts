@@ -1,3 +1,4 @@
+import { BulletDataService } from './bullet-data.service';
 import { BulletComponent } from './bullet/bullet.component';
 import { Bullet } from './bullet/bullet.model';
 import { Component, Output, Input } from '@angular/core';
@@ -7,7 +8,8 @@ import {FormsModule} from '@angular/forms'
 @Component({
   selector: 'app-section',
   templateUrl:'./section.component.html' ,
-  styleUrls: ['./section.component.css']
+  styleUrls: ['./section.component.css'],
+  providers: [BulletDataService]
 })
 
 export class SectionComponent  {
@@ -16,12 +18,16 @@ sect: string;
 bulList: Bullet[]=[];
 showForm: boolean=true;
 
-constructor () {
+bulletList: BulletDataService;
 
-}
+
+constructor () {}
+
+  //this.bulletList.getData();
 
   addBullet(updatedBul, t ){
     this.bulList=updatedBul;
+    this.bulletList.addBul(updatedBul);
     console.log(this.bulList);
   }
 
