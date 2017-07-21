@@ -1,22 +1,22 @@
 <div class="container" [hidden]="seeForm" >
 
     <div class="row">
-        <div class="col-xs-6 " style="border: solid grey 1px; border-radius:5px">
+        <div class="col-md-6 " style="border: solid grey 1px; border-radius:5px; margin-left: 100px; margin-top: 37px">
             <form class="form-group " (ngSubmit)="onSubmit(f)" #f="ngForm">
                 <legend> Enter Bullet</legend>
-                    <div class="row marginBottom">
-                        <div class="col-xs-3">   
+                    <div class="row ">
+                        <div class="col-md-3">   
                             <label for="title"> Title:</label>
                         </div>
-                        <div class="col-xs-3">
+                        <div class="col-md-3">
                             <input type="text" id="title" ngModel name="title" >
                         </div>
                     </div>
-                    <div class="row marginBottom">
-                        <div class="col-xs-3"> 
+                    <div class="row ">
+                        <div class="col-md-3"> 
                             <label for="place"> Enter place: </label>
                         </div>
-                        <div class="col-xs-3"> 
+                        <div class="col-md-3"> 
                             <input type="text" id="place"  ngModel name="place" >
                         </div>
                     </div>
@@ -25,11 +25,9 @@
                         <textarea class="form-control" id="bullet" name="bullet" ngModel rows="3"></textarea>
                     </div>
                     <div class="row">
-                        
-                          
-                                <button class="btn btn-success marginTop pull-right col-xs-2" style="margin-right:15px" > Submit</button> 
-                         
-                                               
+                                            
+                        <button class="btn btn-success marginTop pull-right col-md-2" style="margin-right:15px" > Submit</button> 
+                                                                      
                     </div>       
             </form>
         </div>

@@ -1,6 +1,13 @@
 .margin{
 
 margin-bottom: 10px;
-padding: 10px;
+padding-left: 20px;
+padding-right:0px;
 
+}
+
+.button-margin {
+
+margin: 5px;
+padding: 5px;
 }

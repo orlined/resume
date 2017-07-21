@@ -10,7 +10,7 @@ import { BulletDataService } from '../bullet-data.service';
   selector: 'bullet-form',
   templateUrl: './bullet-form.component.html',
   styleUrls: ['./bullet-form.component.css'],
-  providers: [BulletDataService]
+  providers: []
 })
 export class BulletFormComponent implements OnInit {
 

@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class BulletDataService {
 
-//nBul:{in: number,title:string, place:string, bullet:string, whichSection:string}
+
 bulletData: Bullet[]=[{id: 1, title: "PM", place: "Seattle", bullet:"Test1", section:"Education" },
   {id: 2, title: "Program Manager", place: "Seattle", bullet:"Test1", section:"Work" },
   {id: 3, title: "APM", place: "Seattle", bullet:"Test1", section:"Work" },
@@ -21,9 +21,9 @@ bulletData: Bullet[]=[{id: 1, title: "PM", place: "Seattle", bullet:"Test1", sec
 
   }
 
-  getData(){
+  delBullet(index: number){
 
-    return this.bulletData;
+    this.bulletData.splice(index,1);
 
   }
   constructor() { }
