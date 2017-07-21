@@ -14,6 +14,8 @@ import {FormsModule} from '@angular/forms'
 
 export class SectionComponent implements OnInit {
 
+@Input() sectionName: string;
+
 sect: string;
 bulList: Bullet[]=[];
 showForm: boolean=true;
@@ -22,6 +24,7 @@ constructor (private bulData: BulletDataService) {}
 
 ngOnInit(){
 this.bulList=this.bulData.bulletData;
+console.log(this.bulList)
 }
 
  
@@ -30,17 +33,9 @@ this.bulList=this.bulData.bulletData;
   }
 
   assignSection(s: string){
-
-    this.sect=s;
-    
+    this.sect=s; 
   }
 
-  deleteBul(id: number) {
-    var x;
-    this.bulList.splice(id,1);
-   
-    console.log(this.bulList)
-    console.log(id+"deleteBul");
-  }
+ 
 
 }
